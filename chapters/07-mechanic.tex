@@ -28,9 +28,8 @@ If the object only moves and feels gravity, then the mechanic energy $E$ is give
     E = \frac{1}{2} m v^{2} + m g h
 \end{equation}
 Solving for $v^{2}$ you get
-\begin{equation}
+\begin{equation} \label{eq.07.vv}
     v^{2} = \left( - 2 g \right) h + \left( \frac{2 E}{m} \right)
-    \label{eq.07.vv}
 \end{equation}
 This relation predicts that $v^{2}$ is a \textbf{linear function} of $h$ with the slope being $-2g$ and the intercept being $2 E / m$. That is, the data in a $v^{2}$ versus $h$ graph should have a \textbf{linear shape}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,36 +112,32 @@ One of the goals of this experiment is to verify that mechanic energy is constan
 
 In particular, note that the energy values in my run 6 (figure \ref{figure.07.run.6.e}) appear to be random. This strongly suggest that the variations are more related to noise than anything physical.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.07.run.1.e}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/07-mechanic/run-1-energy.png}
     \end{center}
     \caption{}
-    \label{figure.07.run.1.e}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.07.run.2.e}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/07-mechanic/run-2-energy.png}
     \end{center}
     \caption{}
-    \label{figure.07.run.2.e}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.07.run.5.e}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/07-mechanic/run-5-energy.png}
     \end{center}
     \caption{}
-    \label{figure.07.run.5.e}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.07.run.6.e}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/07-mechanic/run-6-energy.png}
     \end{center}
     \caption{}
-    \label{figure.07.run.6.e}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Calculate Velocity Squared}
@@ -154,51 +149,45 @@ In a separate column, you should calculate the velocity squared using the values
 The other goal of this experiment was to verify the linear relation between $v^{2}$ and $h$ suggested by equation (\ref{eq.07.vv}) due to conservation of energy. Since the relation is a linear function, the data points should arrange themselves to form a linear shape. You can use Google Sheets or Excel to find the best linear fit. In Google Sheets, this is under ``Series'' in the chart editor. You need to check the ``Trend line'' box and make sure that it is ``Linear''. It is good practice to reduce the size of the data points (I use 2px) and to use a color for the trend line that is different from the color of the data points. In my case I have blue data points for the experimental data and red line for the best fit line.
 
 If the data were perfect, then the slope of this linear fit should be given by
-\begin{equation}
+\begin{equation} \label{eq.07.slope}
     \text{slope } = -2g = 19.6 \text{ m/s}^{2}
-    \label{eq.07.slope}
 \end{equation}
 and the intercept would be related to the amount of mechanic energy via
 \begin{equation}
     \text{intercept } = \frac{2 E}{m}
 \end{equation}
 The slope is negative, so we should see a diagonal line that is downward as height increases. From the intercept you can get a value for mechanic energy that should be close to what you found in the mechanic energy column:
-\begin{equation}
+\begin{equation} \label{eq.07.intercept}
     E = \frac{m \times \text{ intercept}}{2}
-    \label{eq.07.intercept}
 \end{equation}
 You can also compare this value with the average of the mechanic energy column (use the \texttt{AVERAGE} function to compute this). Note that this is an average over time.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.07.run.1.fit}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/07-mechanic/run-1-fit.png}
     \end{center}
     \caption{}
-    \label{figure.07.run.1.fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.07.run.2.fit}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/07-mechanic/run-2-fit.png}
     \end{center}
     \caption{}
-    \label{figure.07.run.2.fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.07.run.5.fit}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/07-mechanic/run-5-fit.png}
     \end{center}
     \caption{}
-    \label{figure.07.run.5.fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.07.run.6.fit}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/07-mechanic/run-6-fit.png}
     \end{center}
     \caption{}
-    \label{figure.07.run.6.fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{My Data}
@@ -213,7 +202,7 @@ This number is close to the time-average of the mechanic energy: 0.3728 J.
 
 Here is a table summarizing some of my results.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.07.results}
 	\begin{center}
 		\begin{tabular}{|r|r|r|r|r|}\hline
 			Run & 1 & 2 & 5 & 6 \\ \hline
@@ -225,7 +214,6 @@ Here is a table summarizing some of my results.
 		\end{tabular}
 	\end{center}
 	\caption{Summary of results}
-	\label{table.07.results}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Your Data}

@@ -84,7 +84,7 @@ In order to quantify the agreement between the two values of impulse found, you 
 \end{equation}
 (The long vertical lines mean taking the absolute value and thus ignoring the sign of the fraction inside). In my case, the percent difference was always below 2\%.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.08.results.elastic}
 	\begin{center}
         \begin{tabular}{|r|r|r|r|r|}\hline
             Extra mass & $\Delta p$ & Average $F$ & $\Delta t$ & Impulse \\ \hline
@@ -96,7 +96,6 @@ In order to quantify the agreement between the two values of impulse found, you 
 		\end{tabular}
 	\end{center}
 	\caption{Summary of results for the elastic collision}
-	\label{table.08.results.elastic}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Inelastic Collision}
@@ -107,7 +106,7 @@ The velocity column for each inelastic collision has a single velocity measureme
 
 There is a very important difference between the inelastic collisions and the elastic collisions: In the force versus time graph, after the initial deep well (which is deeper in the inelastic case than in the elastic case), there are peaks and wells that are significant in magnitude and cannot be regarded as noise. For example, the significant region in the force versus time graph for run 1 is in figure \ref{figure.08.run.1}. Beyond this region in time, there are further oscillations, but they are not large enough to be significant and are thus regarded as noise.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[ht!]
+\begin{table} \label{table.08.results.inelastic}
 	\begin{center}
         \begin{tabular}{|r|r|}\hline
             Extra mass & Percent difference \\ \hline
@@ -119,15 +118,13 @@ There is a very important difference between the inelastic collisions and the el
 		\end{tabular}
 	\end{center}
 	\caption{Summary of results for the inelastic collision}
-	\label{table.08.results.inelastic}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.08.run.1}
     \begin{center}
 	    \includegraphics[scale=0.77]{images/08-impulse/run1.png}
     \end{center}
     \caption{}
-    \label{figure.08.run.1}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Your Data}

@@ -334,7 +334,7 @@ And here are the \textbf{figures}:
     \item Figure \ref{figure.baseline.interval} with the error interval for the baseline segment.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.baseline.descriptive}
     \centering
 	\begin{tabular}{|l|r|} \hline
         \textbf{Name} & \textbf{Value (g)} \\
@@ -347,10 +347,9 @@ And here are the \textbf{figures}:
 		\hline
 	\end{tabular}
 	\caption{Mass Min, 25th, 50th, 75th Percentiles, and Maximum for Baseline}
-	\label{table.baseline.descriptive}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.baseline.means}
     \centering
 	\begin{tabular}{|l|r|} \hline
 		\textbf{Name} & \textbf{Value (g)} \\
@@ -362,10 +361,9 @@ And here are the \textbf{figures}:
 		\hline
 	\end{tabular}
 	\caption{Mass Pythagorean Means and Standard Deviation for Baseline}
-	\label{table.baseline.means}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.baseline.chebyshev}
     \centering
 	\begin{tabular}{|l|r|} \hline
 		\textbf{Name} & \textbf{Value (g)} \\
@@ -380,10 +378,9 @@ And here are the \textbf{figures}:
 		\hline
 	\end{tabular}
 	\caption{First, Second, and Third Chebyshev Intervals for Baseline}
-	\label{table.baseline.chebyshev}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.baseline.range}
     \centering
 	\begin{tabular}{|l|r|} \hline
 		\textbf{Name} & \textbf{Value (g)} \\
@@ -394,10 +391,9 @@ And here are the \textbf{figures}:
 		\hline
 	\end{tabular}
 	\caption{Range, Center, and Central Error for Baseline}
-	\label{table.baseline.range}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.baseline.interval}
     \centering
 	\begin{tabular}{|l|r|} \hline
 		\textbf{Name} & \textbf{Value (g)} \\
@@ -408,10 +404,9 @@ And here are the \textbf{figures}:
 		\hline
 	\end{tabular}
 	\caption{Error Interval for Baseline}
-	\label{table.baseline.interval}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.baseline.percent}
     \centering
 	\begin{tabular}{|l|r|r|r|} \hline
 		\textbf{Name} & \textbf{Experimental (g)} & \textbf{Theoretical (g)} & \textbf{Percent Difference} \\
@@ -426,10 +421,9 @@ And here are the \textbf{figures}:
 		\hline
 	\end{tabular}
 	\caption{Percent Differences for Baseline}
-	\label{table.baseline.percent}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.theoretical.demo}
     \centering
     \begin{tabular}{|l|r|}
         \hline
@@ -445,55 +439,48 @@ And here are the \textbf{figures}:
         \hline
     \end{tabular}
     \caption{Theoretical values for class demonstration}
-    \label{table.theoretical.demo}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.baseline.quartiles}
     \begin{center}
         \includegraphics[scale=0.77]{images/00-intro/baseline-quartiles.png}
     \end{center}
     \caption{Quartiles for Baseline Segment}
-    \label{figure.baseline.quartiles}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.baseline.center}
     \begin{center}
         \includegraphics[scale=0.77]{images/00-intro/baseline-min-center-max.png}
     \end{center}
     \caption{Range and Center for Baseline Segment}
-    \label{figure.baseline.center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.baseline.chebyshev.1}
     \begin{center}
         \includegraphics[scale=0.77]{images/00-intro/baseline-chebyshev-1.png}
     \end{center}
     \caption{First Chebyshev Interval for Baseline Segment}
-    \label{figure.baseline.chebyshev.1}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.baseline.chebyshev.2}
     \begin{center}
         \includegraphics[scale=0.77]{images/00-intro/baseline-chebyshev-2.png}
     \end{center}
     \caption{Second Chebyshev Interval for Baseline Segment}
-    \label{figure.baseline.chebyshev.2}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.baseline.chebyshev.3}
     \begin{center}
         \includegraphics[scale=0.77]{images/00-intro/baseline-chebyshev-3.png}
     \end{center}
     \caption{Third Chebyshev Interval for Baseline Segment}
-    \label{figure.baseline.chebyshev.3}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
+\begin{figure} \label{figure.baseline.interval}
     \begin{center}
         \includegraphics[scale=0.77]{images/00-intro/baseline-error-interval.png}
     \end{center}
     \caption{Error Interval for Baseline Segment}
-    \label{figure.baseline.interval}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Your Data}
@@ -505,7 +492,7 @@ Your data also consist of two files:
 \end{itemize}
 However, the ``theoretical'' values for each section are different. See Table \ref{table.theoretical.v01} and Table \ref{table.theoretical.v02} for specific details.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.theoretical.v01}
     \centering
     \begin{tabular}{|l|r|}
         \hline
@@ -521,10 +508,9 @@ However, the ``theoretical'' values for each section are different. See Table \r
         \hline
     \end{tabular}
     \caption{Theoretical values for section V01}
-    \label{table.theoretical.v01}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table} \label{table.theoretical.v02}
     \centering
     \begin{tabular}{|l|r|}
         \hline
@@ -540,7 +526,6 @@ However, the ``theoretical'' values for each section are different. See Table \r
         \hline
     \end{tabular}
     \caption{Theoretical values for section V02}
-    \label{table.theoretical.v02}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Your Lab Report}
