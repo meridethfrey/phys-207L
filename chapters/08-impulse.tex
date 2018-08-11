@@ -85,16 +85,15 @@ In order to quantify the agreement between the two values of impulse found, you 
 (The long vertical lines mean taking the absolute value and thus ignoring the sign of the fraction inside). In my case, the percent difference was always below 2\%.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table} \label{table.08.results.elastic}
-	\begin{center}
-        \begin{tabular}{|r|r|r|r|r|}\hline
-            Extra mass & $\Delta p$ & Average $F$ & $\Delta t$ & Impulse \\ \hline
-            0 kg & -0.339 kg m/s & -0.804 N & 0.430 s & -0.346 kg m/s \\
-            0.1 kg & -0.357 kg m/s & -0.764 N & 0.476 s & -0.364 kg m/s \\
-            0.2 kg & -0.528 kg m/s & -1.079 N & 0.496 s & -0.535 kg m/s \\
-            0.3 kg & -0.570 kg m/s & -1.096 N & 0.528 s & -0.579 kg m/s \\
-			\hline
-		\end{tabular}
-	\end{center}
+    \centering
+    \begin{tabular}{|r|r|r|r|r|}\hline
+        Extra mass & $\Delta p$ & Average $F$ & $\Delta t$ & Impulse \\ \hline
+        0 kg & -0.339 kg m/s & -0.804 N & 0.430 s & -0.346 kg m/s \\
+        0.1 kg & -0.357 kg m/s & -0.764 N & 0.476 s & -0.364 kg m/s \\
+        0.2 kg & -0.528 kg m/s & -1.079 N & 0.496 s & -0.535 kg m/s \\
+        0.3 kg & -0.570 kg m/s & -1.096 N & 0.528 s & -0.579 kg m/s \\
+        \hline
+    \end{tabular}
 	\caption{Summary of results for the elastic collision}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,23 +106,21 @@ The velocity column for each inelastic collision has a single velocity measureme
 There is a very important difference between the inelastic collisions and the elastic collisions: In the force versus time graph, after the initial deep well (which is deeper in the inelastic case than in the elastic case), there are peaks and wells that are significant in magnitude and cannot be regarded as noise. For example, the significant region in the force versus time graph for run 1 is in figure \ref{figure.08.run.1}. Beyond this region in time, there are further oscillations, but they are not large enough to be significant and are thus regarded as noise.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table} \label{table.08.results.inelastic}
-	\begin{center}
-        \begin{tabular}{|r|r|}\hline
-            Extra mass & Percent difference \\ \hline
-            0 kg & 0.355\% \\
-            0.1 kg & 0.554\% \\
-            0.2 kg & 0.408\% \\
-            0.3 kg & 0.146\% \\
-			\hline
-		\end{tabular}
-	\end{center}
+	\centering
+    \begin{tabular}{|r|r|}\hline
+        Extra mass & Percent difference \\ \hline
+        0 kg & 0.355\% \\
+        0.1 kg & 0.554\% \\
+        0.2 kg & 0.408\% \\
+        0.3 kg & 0.146\% \\
+        \hline
+    \end{tabular}
 	\caption{Summary of results for the inelastic collision}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure} \label{figure.08.run.1}
-    \begin{center}
-	    \includegraphics[scale=0.77]{images/08-impulse/run1.png}
-    \end{center}
+    \centering
+    \includegraphics[scale=0.71]{images/08-impulse/run1.png}
     \caption{}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
