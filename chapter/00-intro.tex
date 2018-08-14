@@ -328,7 +328,7 @@ As a rule of thumb, you can take the traditional average as the best option for 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Accounting for the Baseline Weight Measurement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+The baseline measurement is meant to give some data on the sensor's default setting. In principle, the baseline measurement should give a zero value. In practice, this can be done via a proper zeroing of the sensor, where the default value is set to zero. However, sometimes the sensor is not zeroed properly, and the baseline measurement is non-zero. That appears to be the case here: in my case the baseline weight measurement is close to 5 lb. This means that this value must be \textbf{subtracted} from the other two weight measurements.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup for Velocity Measurement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,10 +356,10 @@ My results are in the form of tables and figures. Here are the \textbf{tables}:
 \end{itemize}
 And here are the \textbf{figures}:
 \begin{itemize}
-    \item Figure \ref{figure.baseline.quartiles} with the quartiles for the baseline segment
-    \item Figure \ref{figure.baseline.center} with the range and center for the baseline segment
-    \item Figures \ref{figure.baseline.chebyshev.1}, \ref{figure.baseline.chebyshev.2}, and \ref{figure.baseline.chebyshev.3} with three Chebyshev intervals for the baseline segment
-    \item Figure \ref{figure.baseline.interval} with the error interval for the baseline segment
+    \item Figure \ref{figure.00.baseline.quartiles} with the quartiles for the baseline segment
+    \item Figure \ref{figure.00.baseline.center} with the range and center for the baseline segment
+    \item Figures \ref{figure.00.baseline.chebyshev.1}, \ref{figure.00.baseline.chebyshev.2}, and \ref{figure.00.baseline.chebyshev.3} with three Chebyshev intervals for the baseline segment
+    \item Figure \ref{figure.00.baseline.interval} with the error interval for the baseline segment
 \end{itemize}
 Here are some comments of my results from Table \ref{table.00.results}:
 \begin{itemize}
@@ -471,6 +471,7 @@ Here are some comments of my results from Table \ref{table.00.results}:
         H Mean & 4.967486 & 99.919986 & 170.928791 & 94.952499 & -0.05\% & 165.961305 & -0.02\% \\
         Median & 5.032499 & 99.911915 & 170.953287 & 94.879416 & -0.13\% & 165.920788 & -0.05\% \\
         Center & 4.949047 & 99.859397 & 170.895024 & 94.910351 & -0.09\% & 165.945978 & -0.03\% \\
+        \hline
         Theory & 0.000000 & 95.000000 & 166.000000 & 95.000000 & NA & 166.000000 & NA \\
         \hline
         SD & 0.612854 & 0.565955 & 0.620371 & NA & NA & NA & NA \\
@@ -487,49 +488,49 @@ Here are some comments of my results from Table \ref{table.00.results}:
     \centering
     \includegraphics{chart/00-intro/baseline-quartiles.pdf}
     \caption{Quartiles for Baseline Segment}
-    \label{figure.baseline.quartiles}
+    \label{figure.00.baseline.quartiles}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
     \includegraphics{chart/00-intro/baseline-min-center-max.pdf}
     \caption{Range and Center for Baseline Segment}
-    \label{figure.baseline.center}
+    \label{figure.00.baseline.center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
     \includegraphics{chart/00-intro/baseline-chebyshev-1.pdf}
     \caption{First Chebyshev Interval for Baseline Segment}
-    \label{figure.baseline.chebyshev.1}
+    \label{figure.00.baseline.chebyshev.1}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
     \includegraphics{chart/00-intro/baseline-chebyshev-2.pdf}
     \caption{Second Chebyshev Interval for Baseline Segment}
-    \label{figure.baseline.chebyshev.2}
+    \label{figure.00.baseline.chebyshev.2}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
     \includegraphics{chart/00-intro/baseline-chebyshev-3.pdf}
     \caption{Third Chebyshev Interval for Baseline Segment}
-    \label{figure.baseline.chebyshev.3}
+    \label{figure.00.baseline.chebyshev.3}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
     \includegraphics{chart/00-intro/baseline-error-interval.pdf}
     \caption{Error Interval for Baseline Segment}
-    \label{figure.baseline.interval}
+    \label{figure.00.baseline.interval}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Your Data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Your data also consist of two files:
 \begin{itemize}
-    \item \texttt{mass.tsv}
+    \item \texttt{weight.tsv}
     \item \texttt{velocity.tsv}
 \end{itemize}
 However, the ``theoretical'' values for each section are different. See Table \ref{table.00.theoretical.v01} and Table \ref{table.00.theoretical.v02} for specific details.

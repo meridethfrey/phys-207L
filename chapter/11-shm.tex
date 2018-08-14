@@ -53,7 +53,7 @@ After recording data for a short time, you can use the LabQuest device to obtain
 
 We are going to do four combinations of mass and spring constant, as stated in Table \ref{table.11.parameters}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table} \label{table.11.parameters}
+\begin{table}
     \centering
     \begin{tabular}{|r|r|r|}\hline
         $k$ (N/m) & $m$ (kg) & $\omega$ (rad/s) \\ \hline
@@ -63,7 +63,8 @@ We are going to do four combinations of mass and spring constant, as stated in T
         15 & 0.15 & 10 \\
         \hline
     \end{tabular}
-	\caption{Four combinations of mass and spring constant, along with $\omega$ prediction}
+    \caption{Four combinations of mass and spring constant, along with $\omega$ prediction}
+    \label{table.11.parameters}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Analysis}
@@ -82,10 +83,11 @@ The linear behavior confirms Hooke's law. The slope of the linear fit correspond
 \end{equation}
 Note that position and force data come from different sensors.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure} \label{figure.11.hooke}
+\begin{figure}
     \centering
     \includegraphics[scale=0.71]{image/11-shm/hooke.png}
     \caption{}
+    \label{figure.11.hooke}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Force and Acceleration}
@@ -101,10 +103,11 @@ Together with the measurement of the spring constant from the force versus posit
     \omega_{1} = \sqrt{\frac{k_{\text{exp}}}{m_{\text{exp}}}}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure} \label{figure.11.newton}
+\begin{figure}
     \centering
     \includegraphics[scale=0.71]{image/11-shm/newton.png}
     \caption{}
+    \label{figure.11.newton}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Acceleration and Position}
@@ -118,10 +121,11 @@ That is, for simple harmonic motion, the acceleration is proportional to the pos
     \omega_{2} = \sqrt{- (\text{slope of acceleration versus position})}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure} \label{figure.11.ax}
+\begin{figure}
     \centering
     \includegraphics[scale=0.71]{image/11-shm/a-vs-x.png}
     \caption{}
+    \label{figure.11.ax}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Common Angular Frequency}
@@ -142,17 +146,18 @@ In principle you can perform a sinusoidal fit on velocity and acceleration too. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 A graph with velocity and position is called a phase space graph. For this particular experiment with simple harmonic motion, the velocity and position data yield an elliptical shape (a closed orbit), as in Figure \ref{figure.11.phase}. Now you know!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure} \label{figure.11.phase}
+\begin{figure}
     \centering
     \includegraphics[scale=0.71]{image/11-shm/phase.png}
     \caption{}
+    \label{figure.11.phase}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{My Data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The results for my run 1 are summarized in Table \ref{table.11.results}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table} \label{table.11.results}
+\begin{table}
     \centering
     \begin{tabular}{|l|r|}
         \hline
@@ -169,6 +174,7 @@ The results for my run 1 are summarized in Table \ref{table.11.results}.
         \hline
     \end{tabular}
     \caption{Results for run 1. The last row is the average of the previous four rows.}
+    \label{table.11.results}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Your Data}
