@@ -36,15 +36,15 @@ This experiment consists of a hypothetical \textbf{weight} measurement taken ove
 \end{itemize}
 You need to provide the \textbf{best estimate} for the three weight values from the data.
 
-Although this is a measurement over time, we will treat each time measurement as \textbf{independent}. That is, this hypothetical sensor is repeatedly measuring the same quantity, but due to \textbf{noise}, it cannot provide the same result each time. The main challenge is to deal with this noise. Which value to report? The first one? The last one? The one in the middle of the experiment? One value chosen at random?
+Although this is a measurement over time, we will treat each time measurement as \textbf{independent}. That is, this hypothetical sensor is repeatedly measuring the same quantity, but due to \textbf{noise}, it cannot provide the same result each time. The main challenge is to deal with this noise. Which value to report as the measured weight? The first one? The last one? The one in the middle of the experiment? One value chosen at random?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Velocity Experiment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This experiment consist of a hypothetical \textbf{velocity} measurement taken over \textbf{time}. You need to see if there exist a relationship between the velocity values and the time values. In order to answer this, it will be helpful to make a chart of velocity versus time.
+This experiment consist of a hypothetical \textbf{velocity} measurement taken over \textbf{time}. You need to see if there exist a relation between the velocity values and the time values. In order to answer this, it will be helpful to make a chart of velocity versus time.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Analysis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-There are two separate parts. But before the analysis you need to setup your environment.
+There are two separate parts. But before beginning the analysis you need to setup your environment.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup for Weight Experiment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,23 +60,23 @@ The file extension \texttt{.tsv} means \textbf{Tab-Separated Values}, meaning th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{View the data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This step is a sanity check: you want to take a \textbf{quick glimpse} at the data that you just obtained to make sure that everything is going well.
+This step is a sanity check: you want to take a \textbf{quick glimpse} at the data that you just obtained to make sure that everything is going well and you have the right file.
 
-You can use a simple \textbf{text editor} like Notepad (Windows) or TextEdit (Mac OS X) to open and view the data. You should see about 600 lines of text, each with two numerical values. The first line is a \textbf{header} and contains information about the data below. In our case, the header says that the first column is a quantity representing \textbf{time} measured in \textbf{seconds} (s), and the second column is a quantity representing \textbf{weight} measured in \textbf{pounds} (lb). Both the \textbf{names} and the \textbf{units} of each quantity are equally important.
+You can use a simple \textbf{text editor} like Notepad (Windows) or TextEdit (Mac OS X) to open and view the data. You should see about 600 lines of text, each with two numerical values. The first line is a \textbf{header} and contains information about the data below the header. In our case, the header says that the first column is a quantity representing \textbf{time} measured in \textbf{seconds} (s), and the second column is a quantity representing \textbf{weight} measured in \textbf{pounds} (lb). Both the \textbf{names} and the \textbf{units} of each quantity are equally important to minimize ambiguity.
 
 Note that Microsoft Word and/or Google Docs are not simple text editors but complicated \textbf{word processors}. A text editor only allows simple editing like adding, changing, or removing characters in a text. A word processor allows you to format a text into different pages, make text bold, change fonts, etcetera. If you use a word processor to view data, the data will get split into multiple pages, and also might acquire unnecessary formating.
 
-As you can see, a single data file with hundreds of rows can correspond to dozens of pages of paper. For this reason, \textbf{you should not include raw data files in your printed lab reports}. It is more useful (and less wasteful) to include the raw data in a spreadsheet that is shared electronically.
+As you can see, a single data file with hundreds of rows can correspond to dozens of pages of paper. For this reason, \textbf{you should not include raw data files in your printed lab reports}. It is more useful (and less wasteful) to include the raw data in a spreadsheet that is submitted to Canvas.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Start a new spreadsheet}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-It goes without saying that you should begin with an \textbf{empty spreadsheet}. Please, give your spreadsheet a useful \textbf{file name} so that it can be later identified and distinguished from spreadsheets of other students, and from your own spreadsheets for other experiments. For example, \texttt{irizarry-gelpi-lab-00-weight} is a good file name because:
+It goes without saying that you should begin with an \textbf{empty spreadsheet}. Please, give your spreadsheet a useful \textbf{filename} so that it can be later identified and distinguished from spreadsheets of other students, and from your own spreadsheets for other experiments. For example, \texttt{irizarry-gelpi-lab-00-weight} is a good filename because:
 \begin{itemize}
     \item \texttt{irizarry-gelpi} indicates the \textbf{name} of the owner of the spreadsheet
     \item \texttt{lab-00} indicates which \textbf{laboratory} is in the spreadsheet
     \item \texttt{weight} indicates which \textbf{part} or experiment is in the spreadsheet
 \end{itemize}
-Each student is required to submit a spreadsheet. There is no need to include your partner's name. Also, no need to include information about the version like \texttt{v1} or \texttt{final}.
+Each student is required to submit his/her own spreadsheet. There is no need to include your partner's name. Also, no need to include information about the spreadsheet version like \texttt{v1} or \texttt{final}.
 
 Do not submit a file called \texttt{physics-lab} or \texttt{Untitled spreadsheet}. Students who do not follow this practice will get points taken off.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,33 +84,35 @@ Do not submit a file called \texttt{physics-lab} or \texttt{Untitled spreadsheet
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 This step involves putting the data into Google Sheets or Excel for analysis.
 
-If you \textbf{copy and paste} the data directly into a spreadsheet, you will probably end with a \textbf{single column} of data. But if you look closely, the data involves two columns of numbers. A single column with spaced values is not useful in a spreadsheet.
+If you \textbf{copy and paste} the data directly into a spreadsheet, you will probably end with a \textbf{single column} filled with data. But if you look closely, the data involves two columns of numbers. A single column with spaced values is not useful in a spreadsheet.
 
-Instead of copying and pasting the data, it is better to \textbf{import} it. In Google Sheets, you can do this by going to
+Instead of copying and pasting the data, it is better to \textbf{import} the data. In Google Sheets, you can do this by going to
 \begin{equation}
     \texttt{File > Import}
 \end{equation}
-Find your file. As import location, choose \texttt{Insert new sheet(s)}. You do not need to change any other import setting. After this you should see a spreadsheet with \textbf{two columns} of data. Column \texttt{A} should be time, and column \texttt{B} should be weight.
+Find your file. As import location, choose \texttt{Insert new sheet(s)}. You do not need to change any other import setting. After this you should see a spreadsheet with \textbf{two columns} of data. Column \texttt{A} should be time, and column \texttt{B} should be weight. Row \texttt{1} should be the header column.
 
-I will refer to this sheet with the raw data by the name \texttt{RawData}. You can change the name of a sheet by double-clicking on the tab near the bottom of the screen.
+I will give this sheet with the raw data the name \texttt{RawData}. You can change the name of a sheet by double-clicking on the tab near the bottom of the screen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Visualize the full data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 This step involves making a chart in order to obtain an initial visualization of the full data.
 
-Before any analysis is done on the new data, it is always useful to make a quick visualization. You can do this by selecting the two columns with data (hold the \texttt{Shift} key), and clicking on \texttt{Insert Chart}. By default, Google Sheets will provide you with a \textbf{line chart}. This is not necessarily the best option for our kind of data, so change the \texttt{Chart Type} to a \textbf{scatter chart}. You will get a chart with points instead of a line. I find it convenient to change the default settings for the size of the points, in order to obtain a better graph. You can double-click on a chart to access the \texttt{Chart editor} menu, and then going to
+Before any analysis is done on new data, it is always useful to make a quick visualization. You can do this by selecting the two columns with data (click on column \texttt{A}, hold the \texttt{Shift} key, and move right to highlight column \texttt{B}), and clicking on \texttt{Insert Chart}.
+
+By default, Google Sheets will provide you with a \textbf{line chart}. This is not necessarily the best option for our kind of data, so change the \texttt{Chart Type} to a \textbf{scatter chart}. You will get a chart with points instead of a line. I find it convenient to change the default settings for the size of the points, in order to obtain a better chart. You can double-click on a chart to access the \texttt{Chart editor} menu, and then going to
 \begin{equation}
-    \texttt{Chart Editor > Customize > Series > Point Size}
+    \texttt{Chart editor > CUSTOMIZE > Series > Point Size}
 \end{equation}
 and changing the value from \texttt{7px} to \texttt{2px}.
 
-You should see three horizontal regions with points. Each region corresponds to a different measurement. Looking at the graph you can learn that
+You should see three horizontal segments with points. Each segment corresponds to a different measurement. Looking at the chart you can learn that
 \begin{itemize}
     \item The baseline weight measurement happens between $t = 0$ s and $t = 10$ s
     \item The weight 1 measurement happens between $t = 10$ s and $t = 20$ s
     \item The weight 2 measurement happens between $t = 20$ s and $t = 30$ s
 \end{itemize}
-By just looking at the graph, you have already learned something useful about the data.
+By just looking at this chart, you have already learned something useful about the data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
     \fbox{\begin{minipage}{20em}
@@ -120,7 +122,7 @@ By just looking at the graph, you have already learned something useful about th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Separate the data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Since there are three different measurements, it would be useful to work on three \textbf{separate sheets}. Add three empty sheets and give them useful names like \texttt{Baseline}, \texttt{One}, and \texttt{Two} or something similar that will help you remember later what each sheet corresponds to.
+Since there are three different measurements, it would be useful to work on three \textbf{separate sheets}. Add three empty sheets and give them useful names like \texttt{Baseline}, \texttt{One}, and \texttt{Two} or something similar that will help you to later remember what each sheet corresponds to.
 
 The first row on each sheet should be a header with the name and unit of each quantity. You can copy and paste the header row in \texttt{RawData}. The sheet with the baseline measurement should have the data between times 0 s and 10 s. You can select this region in \texttt{RawData}, copy it, and paste it to the \texttt{Baseline} sheet. Note that the baseline measurement actually ends at the 9.95 s time value. After doing this, the \texttt{Baseline} sheet should have about 200 rows with data. Similar steps can be taken with the other two measurements.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,15 +132,15 @@ After separating each segment, it will be helpful to make a scatter chart for ea
 
 Each chart should have a \textbf{title}, and \textbf{labeled horizontal and vertical axes}. You can double-click on a chart to access the \texttt{Chart editor} menu. The title can be changed under
 \begin{equation}
-    \texttt{Chart editor > Chart \& axis titles > Type}
+    \texttt{Chart editor > CUSTOMIZE > Chart \& axis titles > Type}
 \end{equation}
-and choose the \texttt{Chart title} option to add a title to the chart. A good title would be something along the lines of ``Baseline Measurement'' in order to provide context. You can add a label to the horizontal axis by choosing \texttt{Horizontal axis title} instead. A good axis label will include the \textbf{name of the quantity} and the \textbf{units} being used to measure it. For example, ``Time (s)'' and ``Weight (lb)''.
+and choose the \texttt{Chart title} option to add a title to the chart. A good title would be something along the lines of ``Baseline Measurement'' in order to provide context. You can add a label to the horizontal axis by choosing \texttt{Horizontal axis title} instead. A good axis label will include the \textbf{name of the quantity} and the \textbf{units} being used to measure it. For example, ``Time (s)'' (for the \textbf{horizontal} axis) and ``Weight (lb)'' (for the \textbf{vertical} axis).
 
-Other useful changes to the default settings are to reduce the size of the points, and to remove the legend, since only one quantity is being plotted.
+Other useful changes to the default settings are to reduce the size of the points, and to remove the legend, since only one quantity is in the chart.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Use named ranges}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-You are going to use the data in the spreadsheet to calculate quantities that are going to help you understand and describe the data. In order to do these calculations, it will be convenient to give nicknames to the parts of the spreadsheet with the numerical weight data. These are called \textbf{named ranges}. To add a named range, first open the menu by going to
+You are going to use the data in the spreadsheet to calculate quantities that are going to help you understand and describe the data. In order to do these calculations, it will be convenient to give nicknames to the parts of the spreadsheet with the numerical data. These are called \textbf{named ranges}. To add a named range, first open the menu by going to
 \begin{equation}
     \texttt{Data > Named ranges...}
 \end{equation}
@@ -150,11 +152,11 @@ Take a look at the numbers in both the time and weight columns. The time column 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Descriptive Statistics for Weight Measurement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The steps in this section apply to each of the three segments in the data, but \textbf{I will use the baseline segment} for illustration purposes.
+The steps in this section apply to each of the three segments in the weight data, but \textbf{I will use the baseline segment} for illustration purposes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Minimum}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Since the weight values are spread over a region, it is useful to known what is the smallest weight measurement in the segment, also known as the \textbf{minimum}. One way to do this is to literally scan the weight column and keep track of the smallest value. That is not a good idea when you have hundreds of values. A more efficient way is to have Google Sheets do this for you. The minimum can be found by using the \texttt{MIN} function via
+Since the weight values are spread over a region, it is useful to known what is the smallest weight measurement in the segment. This value is known as the \textbf{minimum}. One way to find this value is to literally scan the weight column and keep track of the smallest value. That is not a good idea when you have hundreds of values. A more efficient way is to have Google Sheets do this for you. The minimum can be found by using the \texttt{MIN} function via
 \begin{equation}
     \texttt{=MIN(WeightB)}
 \end{equation}
@@ -162,7 +164,7 @@ Note the equal sign in the beginning.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{25th Percentile}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The \textbf{25th percentile} is the weight value measured that is larger than one quarter of all of the weight values in the data. This can be computed using the \texttt{PERCENTILE} function via
+The \textbf{25th percentile} is the weight measurement that is larger than one quarter of all of the weight values in the data. This can be computed using the \texttt{PERCENTILE} function via
 \begin{equation}
     \texttt{=PERCENTILE(WeightB, 0.25)}
 \end{equation}
@@ -170,11 +172,11 @@ Equivalently, this can be computed using the \texttt{QUARTILE} function via
 \begin{equation}
     \texttt{=QUARTILE(WeightB, 1)}
 \end{equation}
-The ``1'' here indicates the \textbf{first quartile}, which is another name for the 25th percentile.
+The \texttt{1} here indicates the \textbf{first quartile}, which is another name for the 25th percentile.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{50th Percentile (Median)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The \textbf{50th percentile} (also known as the \textbf{median}) is the weight value measured that is larger than one half of all the weight values in the data. This can be computed using the \texttt{PERCENTILE} function via
+The \textbf{50th percentile} (also known as the \textbf{median}) is the weight measurement that is larger than one half of all the weight values in the data. This can be computed using the \texttt{PERCENTILE} function via
 \begin{equation}
     \texttt{=PERCENTILE(WeightB, 0.50)}
 \end{equation}
@@ -182,7 +184,7 @@ Equivalently, this can be computed using the \texttt{QUARTILE} function via
 \begin{equation}
     \texttt{=QUARTILE(WeightB, 2)}
 \end{equation}
-The ``2'' here indicates the \textbf{second quartile}. You can also use the \texttt{MEDIAN} function via
+The \texttt{2} here indicates the \textbf{second quartile}. You can also use the \texttt{MEDIAN} function via
 \begin{equation}
     \texttt{=MEDIAN(WeightB)}
 \end{equation}
@@ -190,7 +192,7 @@ All three functions will return the same value.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{75th Percentile}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The \textbf{75th percentile} is the weight value measured that is larger than three quarters of all of the weight values in the data. This can be computed using the \texttt{PERCENTILE} function via
+The \textbf{75th percentile} is the weight measurement that is larger than three quarters of all of the weight values in the data. This can be computed using the \texttt{PERCENTILE} function via
 \begin{equation}
     \texttt{=PERCENTILE(WeightB, 0.75)}
 \end{equation}
@@ -198,26 +200,26 @@ Equivalently, this can be computed using the \texttt{QUARTILE} function via
 \begin{equation}
     \texttt{=QUARTILE(WeightB, 3)}
 \end{equation}
-The ``3'' here indicates the \textbf{third quartile}, which is another name for the 75th percentile.
+The \texttt{3} here indicates the \textbf{third quartile}, which is another name for the 75th percentile.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Visualizing the percentiles}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Figure \ref{figure:00.baseline.quartiles} is chart with the baseline data and the three percentiles marked. It appears that the 25th and 75th percentile are about the same distance away from the 50th percentile. Indeed,
+In Figure \ref{figure:00.baseline.quartiles} you can find the baseline data and the three percentiles marked. It appears that the 25th and 75th percentiles are about the same distance away from the 50th percentile. Indeed,
 \begin{align}
     5.032499\text{ lb} - 4.576510\text{ lb} &= 0.455989 \text{ lb} \\
     5.484631\text{ lb} - 5.032499\text{ lb} &= 0.452132 \text{ lb}
 \end{align}
 This can be interpreted as the sensor not showing a preference for larger or smaller values, which is a good thing.
 
-In order to graph horizontal lines like the ones that appear in Figure \ref{figure:00.baseline.quartiles}, it is convenient to fill an empty column with the desired constant value. The hard way to do this would be to copy and paste the same value on each cell in a column. This is not fun if you have to do this hundreds of times. Instead, you can write the desired value on the first cell in the column, then select that cell, press and hold the \texttt{Shift} key, and drag the selection box down along the column until the end. Now press the \texttt{Ctrl} (or \texttt{Cmd} key in Mac OS X) and \texttt{D} keys. The effect should be to apply the value in the first cell to everything down of it. 
+In order to plot horizontal lines like the ones that appear in Figure \ref{figure:00.baseline.quartiles}, it is convenient to fill an empty column with the desired constant value. The hard way to do this would be to copy and paste the same value on each cell in a column. This is not fun if you have to do this hundreds of times. Instead, you can write the desired value on the first cell in the column, then select that cell, press and hold the \texttt{Shift} key, and drag the selection box down along the column until the end. Now press the \texttt{Ctrl} (or \texttt{Cmd} key in Mac OS X) and \texttt{D} keys. The effect should be to apply the value in the first cell to everything down of it.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Maximum}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The \textbf{maximum} is the largest weight value recorded. You can find this by using the \texttt{MAX} function:
+The \textbf{maximum} is the largest weight measurement recorded. You can find this by using the \texttt{MAX} function:
 \begin{equation}
     \texttt{=MAX(WeightB)}
 \end{equation}
-It is good to tabulate the results obtained so far. In Table \ref{table:00.baseline.descriptive} you can find the minimum, the three percentiles, and the maximum. For my case, it appears that the middle is close to 5 lb.
+It is good to tabulate the results obtained so far. In Table \ref{table:00.baseline.descriptive} you can find the minimum, the three percentiles, and the maximum. In my case, the median is close to 5 lb.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
     \fbox{\begin{minipage}{35em}
@@ -227,7 +229,7 @@ It is good to tabulate the results obtained so far. In Table \ref{table:00.basel
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Average (Arithmetic Mean)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-So far we have identified particular points in the data that have special significance: the min, quartiles, and max (see Table \ref{table:00.baseline.descriptive}). The \textbf{average}, also known as the \textbf{arithmetic mean}, or just the \textbf{mean}, is another value that can be calculated from the data, but that in general does not correspond to any point in the data. The average can be interpreted as a sort of ``middle'' or ``typical'' value. You can calculate this with the \texttt{AVERAGE} function:
+So far we have identified particular points in the data that have special significance: the minimum, the quartiles, and the maximum (see Table \ref{table:00.baseline.descriptive}). The \textbf{average}, also known as the \textbf{arithmetic mean}, or just THE \textbf{mean}, is another value that can be calculated from the data, but that in general does not correspond to any point in the data. The average can be interpreted as a sort of ``middle'' or ``typical'' value. You can calculate this with the \texttt{AVERAGE} function:
 \begin{equation}
     \texttt{=AVERAGE(WeightB)}
 \end{equation}
@@ -277,7 +279,7 @@ That is, in general the harmonic mean is always smaller than the geometric mean,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Standard Deviation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The \textbf{standard deviation} (SD) is defined as the square root of the average square difference from the average. Given $N$ values of weight $w_{1}$, $w_{2}$, ..., $w_{N}$ with average $w_{A}$, the standard deviation $\sigma$ is
+The \textbf{standard deviation} (SD) is defined as the square root of the average square difference from the mean. Given $N$ values of weight $w_{1}$, $w_{2}$, ..., $w_{N}$ with average $w_{A}$, the standard deviation $\sigma$ is
 \begin{equation}
     \sigma = \left( \frac{(w_{1} - w_{A})^{2} + (w_{2} - w_{A})^{2} + ... + (w_{N} - w_{A})^{2}}{N}  \right)^{1/2}
 \end{equation}
@@ -353,6 +355,14 @@ The factor of 100 allows the relative uncertainty to be interpreted as a \textbf
 
 In my case, the relative uncertainty in the baseline segment is 29.37\%, which is very high. However, this is typical of baseline measurements, and you will see later that the relative uncertainty with the other two segments is much smaller.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Repeat on other segments}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+You can repeat the above steps on the other two segments in the experiment. If you are clever, you do not have to write all the sheet again from scratch. In class, I will show how to minimize the amount of work and still obtain results for all three segments.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Accounting for the baseline weight measurement}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The baseline measurement is meant to give some data on the sensor's default setting. In principle, the baseline measurement should give a zero value. In practice, this can be done via proper zeroing of the sensor, where the default value is set to zero. However, sometimes the sensor is not zeroed properly, and the baseline measurement is non-zero. That appears to be the case here: in my case the baseline weight measurement is close to 5 lb. This means that this value must be \textbf{subtracted} from the other two weight measurements. In my case, these subtractions are done in Table \ref{table:00.results}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Percent Difference}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 If you know the theoretical weight value $w_{T}$ that you should have obtained in an experiment with zero error and uncertainty, then you can calculate the \textbf{percent difference} (PD) in order to judge how well your experimental weight value $w_{E}$ is:
@@ -362,14 +372,6 @@ If you know the theoretical weight value $w_{T}$ that you should have obtained i
 Note that, just like the relative uncertainty, the percent difference has no units and can be interpreted as a percentage. If the PD is positive, then the experimental value is larger than the theoretical value (overestimation). On the other hand, if the PD is negative, then the experimental value is smaller than the theoretical value (underestimation).
 
 As a rule of thumb, you can take the traditional average as the best option for an experimental value.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Repeat on other segments}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-You can repeat the above steps on the other two segments in the experiment. If you are clever, you do not have to write all the sheet again from scratch. In class, I will show how to minimize the amount of work and still obtain results for all three segments.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Accounting for the baseline weight measurement}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The baseline measurement is meant to give some data on the sensor's default setting. In principle, the baseline measurement should give a zero value. In practice, this can be done via proper zeroing of the sensor, where the default value is set to zero. However, sometimes the sensor is not zeroed properly, and the baseline measurement is non-zero. That appears to be the case here: in my case the baseline weight measurement is close to 5 lb. This means that this value must be \textbf{subtracted} from the other two weight measurements. In my case, these subtractions are done in Table \ref{table:00.results}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup for Velocity Measurement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -518,11 +520,11 @@ For \textbf{part 1}, your spreadsheet should include the following:
     \item A sheet with the data and results for the baseline segment
     \item A sheet with the data and results for the first weight segment
     \item A sheet with the data and results for the second weight segment
+    \item A sheet summarizing your results
 \end{enumerate}
 For \textbf{each segment}, you should
 \begin{enumerate}
-    \item Include a table like Table \ref{table:00.baseline.descriptive} with the three quartiles.
-    \item Include a chart like Figure \ref{figure:00.baseline.quartiles} with the three quartiles.
+    \item Include a table like Table \ref{table:00.baseline.descriptive} with the minimum, the three quartiles, and the maximum.
     \item Include a table like Table \ref{table:00.baseline.means} with the three Pythagorean means.
     \item Confirm that the harmonic mean is smaller than the geometric mean, and also that the geometric mean is smaller than the usual average.
     \item Include a table like Table \ref{table:00.baseline.interval} with the boundaries of the error interval.
@@ -533,7 +535,7 @@ You can use the spreadsheet with my results as reference.
 
 For \textbf{part 2}, your spreadsheet should include the following:
 \begin{itemize}
-    \item A table like Table \ref{table:00.velocity.results} with the slope and intercept values of the best-fit line
+    \item A table like Table \ref{table:00.velocity.results} with the slope and intercept values of the best-fit line, as well as the percent differences
     \item A chart like Figure \ref{figure:00.velocity.fit} with the velocity data and the best fit line. Make sure that you include the equation.
 \end{itemize}
 The spreadsheet is due on \textbf{Monday, September 10}.
@@ -579,15 +581,15 @@ The spreadsheet is due on \textbf{Monday, September 10}.
         \hline
         \textbf{Name} & \textbf{Value (lb)} \\
         \hline
-        $w_{A} - 3 \sigma$ & 3.203985 \\
-        $w_{A} - 2 \sigma$ & 3.816839 \\
-        $w_{A} - \sigma$ & 4.429693 \\
+        $w_{A} + 3 \sigma$ & 6.881107 \\
+        $w_{A} + 2 \sigma$ & 6.268254 \\
+        $w_{A} + \sigma$ & 5.655400 \\
         \hline
         $w_{A}$ & 5.042546 \\
         \hline
-        $w_{A} + \sigma$ & 5.655400 \\
-        $w_{A} + 2 \sigma$ & 6.268254 \\
-        $w_{A} + 3 \sigma$ & 6.881107 \\
+        $w_{A} - \sigma$ & 4.429693 \\
+        $w_{A} - 2 \sigma$ & 3.816839 \\
+        $w_{A} - 3 \sigma$ & 3.203985 \\
         \hline
     \end{tabular}
     \caption{Boundaries of Three Chebyshev Intervals for Baseline Segment}
@@ -613,9 +615,9 @@ The spreadsheet is due on \textbf{Monday, September 10}.
 	\begin{tabular}{|l|r|} \hline
 		\textbf{Name} & \textbf{Value (lb)} \\
 		\hline
-		$w_{A} - E$ & 3.561706 \\
-		$w_{A}$ & 5.042546 \\
-		$w_{A} + E$ & 6.523387 \\
+        $w_{A} + E$ & 6.523387 \\
+        $w_{A}$ & 5.042546 \\
+        $w_{A} - E$ & 3.561706 \\
 		\hline
 	\end{tabular}
     \caption{Error Interval for Baseline Segment}
