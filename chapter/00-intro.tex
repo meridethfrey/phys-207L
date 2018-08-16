@@ -18,6 +18,7 @@ In this experiment you will get a first encounter with using spreadsheets to ana
     \item Make charts for visualization
     \item Use built-in functions to analyze the data
     \item Make a table with results
+    \item Include a linear trend line and display its equation
 \end{enumerate}
 Let us dive in.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,19 +26,19 @@ Let us dive in.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 There is no actual experiment to collect the data. You will work with two data files, each describing a different hypothetical experiment. Although the data in each file was generated with a computer program, it is similar to some of the data that you will collect later in the semester from sensors during an experiment.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Weight Measurement}
+\subsection{Weight Experiment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 This experiment consists of a hypothetical \textbf{weight} measurement taken over \textbf{time}. Three weight values are measured. First, between the starting time $t = t_{I}$ and $t = t_{1}$ a \textbf{baseline weight} measurement $W_{B}$ is taken to calibrate the sensor. Then, between $t = t_{1}$ and $t = t_{2}$ the \textbf{weight 1} measurement $W_{1}$ is taken. Finally, between $t = t_{2}$ and $t = t_{F}$ the \textbf{weight 2} measurement $W_{2}$ is taken. That is:
 \begin{itemize}
-    \item $t_{I} < t < t_{1}$: Baseline weight measurement $W_{B}$
-    \item $t_{1} < t < t_{2}$: Weight 1 measurement $W_{1}$
-    \item $t_{2} < t < t_{F}$: Weight 2 measurement $W_{2}$
+    \item $t_{I} \leq t < t_{1}$: Baseline weight measurement $W_{B}$
+    \item $t_{1} \leq t < t_{2}$: Weight 1 measurement $W_{1}$
+    \item $t_{2} \leq t \leq t_{F}$: Weight 2 measurement $W_{2}$
 \end{itemize}
-You need to provide the best estimate for the three weight values from the data.
+You need to provide the \textbf{best estimate} for the three weight values from the data.
 
-Although this is a measurement over time, we will treat each time measurement as \textbf{independent}. That is, this hypothetical sensor is repeatedly measuring the same quantity, but due to noise, it cannot provide the same result each time. The main challenge is to deal with this noise. Which value to report? The first one? The last one? The one in the middle of the experiment? One value chosen at random?
+Although this is a measurement over time, we will treat each time measurement as \textbf{independent}. That is, this hypothetical sensor is repeatedly measuring the same quantity, but due to \textbf{noise}, it cannot provide the same result each time. The main challenge is to deal with this noise. Which value to report? The first one? The last one? The one in the middle of the experiment? One value chosen at random?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Velocity Measurement}
+\subsection{Velocity Experiment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 This experiment consist of a hypothetical \textbf{velocity} measurement taken over \textbf{time}. You need to see if there exist a relationship between the velocity values and the time values. In order to answer this, it will be helpful to make a chart of velocity versus time.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,7 +46,7 @@ This experiment consist of a hypothetical \textbf{velocity} measurement taken ov
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 There are two separate parts. But before the analysis you need to setup your environment.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Setup for Weight Measurement}
+\subsection{Setup for Weight Experiment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Here are some steps to follow before you can analyze the weight data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -65,14 +66,15 @@ You can use a simple \textbf{text editor} like Notepad (Windows) or TextEdit (Ma
 
 Note that Microsoft Word and/or Google Docs are not simple text editors but complicated \textbf{word processors}. A text editor only allows simple editing like adding, changing, or removing characters in a text. A word processor allows you to format a text into different pages, make text bold, change fonts, etcetera. If you use a word processor to view data, the data will get split into multiple pages, and also might acquire unnecessary formating.
 
-As you can see, a single data file with hundreds of rows can correspond to dozens of pages of paper. For this reason, \textbf{you should not include raw data files in your lab reports}. It is more useful (and less wasteful) to include the raw data in a spreadsheet that is shared electronically.
+As you can see, a single data file with hundreds of rows can correspond to dozens of pages of paper. For this reason, \textbf{you should not include raw data files in your printed lab reports}. It is more useful (and less wasteful) to include the raw data in a spreadsheet that is shared electronically.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Start a new spreadsheet}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-It goes without saying that you should begin with an \textbf{empty spreadsheet}. Please, give your spreadsheet a useful \textbf{file name} so that it can be later identified and distinguished from spreadsheets from other students, and from your own spreadsheets from other experiments. For example, \texttt{irizarry-gelpi-lab-00} is a good file name because:
+It goes without saying that you should begin with an \textbf{empty spreadsheet}. Please, give your spreadsheet a useful \textbf{file name} so that it can be later identified and distinguished from spreadsheets of other students, and from your own spreadsheets for other experiments. For example, \texttt{irizarry-gelpi-lab-00-weight} is a good file name because:
 \begin{itemize}
     \item \texttt{irizarry-gelpi} indicates the \textbf{name} of the owner of the spreadsheet
-    \item \texttt{lab-00} indicates which \textbf{experiment} is in the spreadsheet
+    \item \texttt{lab-00} indicates which \textbf{laboratory} is in the spreadsheet
+    \item \texttt{weight} indicates which \textbf{part} or experiment is in the spreadsheet
 \end{itemize}
 Each student is required to submit a spreadsheet. There is no need to include your partner's name. Also, no need to include information about the version like \texttt{v1} or \texttt{final}.
 
@@ -110,6 +112,12 @@ You should see three horizontal regions with points. Each region corresponds to 
 \end{itemize}
 By just looking at the graph, you have already learned something useful about the data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    \fbox{\begin{minipage}{20em}
+        Interactive Chart: \href{https://bl.ocks.org/meirizarrygelpi/4ff9e1ad0a6c6e7ccee79f7f41a793e6}{Weight versus Time: Data}
+    \end{minipage}}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Separate the data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Since there are three different measurements, it would be useful to work on three \textbf{separate sheets}. Add three empty sheets and give them useful names like \texttt{Baseline}, \texttt{One}, and \texttt{Two} or something similar that will help you remember later what each sheet corresponds to.
@@ -134,7 +142,7 @@ You are going to use the data in the spreadsheet to calculate quantities that ar
 \begin{equation}
     \texttt{Data > Named ranges...}
 \end{equation}
-Go to the \texttt{Baseline} sheet, and select the second cell in the weight column (i.e. the first cell with a numerical value in column \texttt{B}). Hold the \texttt{Shift} key and press the \texttt{Page Down} key or down arrow key to move down along the column all the way to the end. When all the numerical values in that column are selected, click on \texttt{+ Add a range} and give it a useful name like \texttt{WeightB} (for baseline weight). Finally, click on \texttt{Done}. You can do something similar for the weight column in the other two segments.
+Go to the \texttt{Baseline} sheet, and select the second cell in the weight column (i.e. the first cell with a numerical value in column \texttt{B}). Hold the \texttt{Shift} key and press the \texttt{Page Down} key or down arrow key to move down along the column all the way to the end. When all the numerical values in that column are selected, click on \texttt{+ Add a range} and give it a useful name like \texttt{WeightB} (for baseline weight). Finally, click on \texttt{Done}. You can do something similar for the weight column in the other two segments, using names like \texttt{Weight1} and \texttt{Weight2}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Significant Figures}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,13 +211,6 @@ This can be interpreted as the sensor not showing a preference for larger or sma
 
 In order to graph horizontal lines like the ones that appear in Figure \ref{figure:00.baseline.quartiles}, it is convenient to fill an empty column with the desired constant value. The hard way to do this would be to copy and paste the same value on each cell in a column. This is not fun if you have to do this hundreds of times. Instead, you can write the desired value on the first cell in the column, then select that cell, press and hold the \texttt{Shift} key, and drag the selection box down along the column until the end. Now press the \texttt{Ctrl} (or \texttt{Cmd} key in Mac OS X) and \texttt{D} keys. The effect should be to apply the value in the first cell to everything down of it. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-    \centering
-    \includegraphics{chart/00-intro/baseline-quartiles.pdf}
-    \caption{Quartiles for Baseline Segment}
-    \label{figure:00.baseline.quartiles}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Maximum}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The \textbf{maximum} is the largest weight value recorded. You can find this by using the \texttt{MAX} function:
@@ -218,21 +219,11 @@ The \textbf{maximum} is the largest weight value recorded. You can find this by 
 \end{equation}
 It is good to tabulate the results obtained so far. In Table \ref{table:00.baseline.descriptive} you can find the minimum, the three percentiles, and the maximum. For my case, it appears that the middle is close to 5 lb.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
-    \centering
-	\begin{tabular}{|l|r|} \hline
-        \textbf{Name} & \textbf{Value (lb)} \\
-        \hline
-		Minimum & 3.468206 \\
-		25th Percentile & 4.576510 \\
-		50th Percentile & 5.032499 \\
-		75th Percentile & 5.484631 \\
-		Maximum & 6.429887 \\
-		\hline
-	\end{tabular}
-    \caption{Min, 25th, 50th, 75th Percentiles, and Max for Baseline Segment}
-    \label{table:00.baseline.descriptive}
-\end{table}
+\begin{center}
+    \fbox{\begin{minipage}{35em}
+        Interactive Chart: \href{https://bl.ocks.org/meirizarrygelpi/faf2f927d6886b88b075ff7cdb631b30}{Weight versus Time: Data, Min, Quartiles, Max, and Mean}
+    \end{minipage}}
+\end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Average (Arithmetic Mean)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -245,6 +236,12 @@ Mathematically, given $N$ values of weight $w_{1}$, $w_{2}$, ..., $w_{N}$, the a
     w_{A} = \frac{1}{N} \left( w_{1} + w_{2} + ... + w_{N} \right)
 \end{equation}
 Note that this is different from the median.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    \fbox{\begin{minipage}{24em}
+        Interactive Chart: \href{https://bl.ocks.org/meirizarrygelpi/1ef52b7ff946234fdc74aa956ccf83c9}{Weight versus Time: Data and Mean}
+    \end{minipage}}
+\end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Geometric Mean}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -292,22 +289,6 @@ Note the ``P'' at the end of the name of this function.
 
 You can tabulate the three Pythagorean means and the SD together. In Table \ref{table:00.baseline.means} you can find the results for my case.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
-    \centering
-	\begin{tabular}{|l|r|} \hline
-		\textbf{Name} & \textbf{Value (lb)} \\
-        \hline
-		Arithmetic Mean & 5.042546 \\
-		Geometric Mean & 5.005110 \\
-        Harmonic Mean & 4.967486 \\
-        \hline
-        Standard Deviation & 0.612854 \\
-		\hline
-	\end{tabular}
-    \caption{Pythagorean Means and Standard Deviation for Baseline Segment}
-    \label{table:00.baseline.means}
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Chebyshev Intervals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 With the average $w_{A}$ and the standard deviation $\sigma$ you can compute the boundaries of the first three \textbf{Chebyshev intervals}:
@@ -317,55 +298,6 @@ With the average $w_{A}$ and the standard deviation $\sigma$ you can compute the
     w_{A} - 3\sigma \leq {}&W \leq w_{A} + 3\sigma
 \end{align}
 In my case, the boundaries for the first three Chebyshev intervals appear in Table \ref{table:00.baseline.chebyshev}. All three intervals can be visualized together in Figure \ref{figure:00.baseline.chebyshev}, and separately in Figures \ref{figure:00.baseline.chebyshev.1}, \ref{figure:00.baseline.chebyshev.2}, and \ref{figure:00.baseline.chebyshev.3}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
-    \centering
-    \begin{tabular}{|l|r|}
-        \hline
-        \textbf{Name} & \textbf{Value (lb)} \\
-        \hline
-        $w_{A} - 3 \sigma$ & 3.203985 \\
-        $w_{A} - 2 \sigma$ & 3.816839 \\
-        $w_{A} - \sigma$ & 4.429693 \\
-        \hline
-        $w_{A}$ & 5.042546 \\
-        \hline
-        $w_{A} + \sigma$ & 5.655400 \\
-        $w_{A} + 2 \sigma$ & 6.268254 \\
-        $w_{A} + 3 \sigma$ & 6.881107 \\
-        \hline
-    \end{tabular}
-    \caption{Boundaries of Three Chebyshev Intervals for Baseline Segment}
-    \label{table:00.baseline.chebyshev}
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-    \centering
-    \includegraphics{chart/00-intro/baseline-chebyshev.pdf}
-    \caption{Three Chebyshev Intervals for Baseline Segment}
-    \label{figure:00.baseline.chebyshev}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-    \centering
-    \includegraphics{chart/00-intro/baseline-chebyshev-1.pdf}
-    \caption{First Chebyshev Interval for Baseline Segment}
-    \label{figure:00.baseline.chebyshev.1}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-    \centering
-    \includegraphics{chart/00-intro/baseline-chebyshev-2.pdf}
-    \caption{Second Chebyshev Interval for Baseline Segment}
-    \label{figure:00.baseline.chebyshev.2}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-    \centering
-    \includegraphics{chart/00-intro/baseline-chebyshev-3.pdf}
-    \caption{Third Chebyshev Interval for Baseline Segment}
-    \label{figure:00.baseline.chebyshev.3}
-\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Range}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -383,13 +315,6 @@ The \textbf{center} is defined as the value in the middle of the range. You can 
 \end{equation}
 Note that this is different from the average or the median. You can visualize the range and the center as in Figure \ref{figure:00.baseline.center}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-    \centering
-    \includegraphics{chart/00-intro/baseline-min-center-max.pdf}
-    \caption{Range and Center for Baseline Segment}
-    \label{figure:00.baseline.center}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Central Error}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Error is a very broad concept. For practical purposes, we are going to define the \textbf{central error} as half of the range:
@@ -399,20 +324,6 @@ Error is a very broad concept. For practical purposes, we are going to define th
 The meaning of the central error is the distance from the center to either end of the range window.
 
 You can tabulate the values of the range, center, and error together. The values for my case are found in Table \ref{table:00.baseline.range}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
-    \centering
-	\begin{tabular}{|l|r|} \hline
-		\textbf{Name} & \textbf{Value (lb)} \\
-		\hline
-		Range & 2.961681 \\
-	    Center & 4.949047 \\
-		Error & 1.480841 \\
-		\hline
-	\end{tabular}
-    \caption{Range, Center, and Central Error for Baseline Segment}
-    \label{table:00.baseline.range}
-\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Chebyshev Number}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -431,27 +342,6 @@ If $E$ is the central error, and $w_{A}$ is the average, then the error interval
 The boundaries of the error interval can be used to limit the possible values of the quantity that is being measured.
 
 The values for the error interval boundaries for my case are in Table \ref{table:00.baseline.interval}. A visualization or the error interval can be found in Figure \ref{figure:00.baseline.interval}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
-    \centering
-	\begin{tabular}{|l|r|} \hline
-		\textbf{Name} & \textbf{Value (lb)} \\
-		\hline
-		$w_{A} - E$ & 3.561706 \\
-		$w_{A}$ & 5.042546 \\
-		$w_{A} + E$ & 6.523387 \\
-		\hline
-	\end{tabular}
-    \caption{Error Interval for Baseline Segment}
-    \label{table:00.baseline.interval}
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-    \centering
-    \includegraphics{chart/00-intro/baseline-error-interval.pdf}
-    \caption{Error Interval for Baseline Segment}
-    \label{figure:00.baseline.interval}
-\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Relative Uncertainty}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -477,22 +367,90 @@ As a rule of thumb, you can take the traditional average as the best option for 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 You can repeat the above steps on the other two segments in the experiment. If you are clever, you do not have to write all the sheet again from scratch. In class, I will show how to minimize the amount of work and still obtain results for all three segments.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Accounting for the Baseline Weight Measurement}
+\subsubsection{Accounting for the baseline weight measurement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The baseline measurement is meant to give some data on the sensor's default setting. In principle, the baseline measurement should give a zero value. In practice, this can be done via proper zeroing of the sensor, where the default value is set to zero. However, sometimes the sensor is not zeroed properly, and the baseline measurement is non-zero. That appears to be the case here: in my case the baseline weight measurement is close to 5 lb. This means that this value must be \textbf{subtracted} from the other two weight measurements. These subtractions are done in Table \ref{table:00.results}.
+The baseline measurement is meant to give some data on the sensor's default setting. In principle, the baseline measurement should give a zero value. In practice, this can be done via proper zeroing of the sensor, where the default value is set to zero. However, sometimes the sensor is not zeroed properly, and the baseline measurement is non-zero. That appears to be the case here: in my case the baseline weight measurement is close to 5 lb. This means that this value must be \textbf{subtracted} from the other two weight measurements. In my case, these subtractions are done in Table \ref{table:00.results}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup for Velocity Measurement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Here are some steps to follow before you can analyze the velocity data. Just like for the weight measurement, you should:
 \begin{enumerate}
-    \item Obtain the data file \texttt{velocity.tsv}.
-    \item Start a new spreadsheet and give it a proper file name.
+    \item Obtain the data file \texttt{velocity.tsv} from Canvas.
+    \item Start a new spreadsheet and give it a proper filename.
     \item Import the data such that you have two columns of data: one for time, and one for velocity.
+    \item Visualize the data with a scatter chart, with time in the horizontal axis, and velocity in the vertical axis.
 \end{enumerate}
+Does the scatter chart exhibit any clear pattern?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    \fbox{\begin{minipage}{20em}
+        Interactive Chart: \href{https://bl.ocks.org/meirizarrygelpi/fd044bb826a7a8e4f141293fa4a64de9}{Velocity versus Time: Data}
+    \end{minipage}}
+\end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Linear Fit for Velocity Measurement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-...
+Spoiler alert: there appears to be a linear relation between the time and velocity values!
+
+A \textbf{linear relation} between an \textbf{independent variable} $t$ and a \textbf{dependent variable} $v$ can be stated as
+\begin{equation}
+    v = A t + B
+\end{equation}
+Here $A$ and $B$ are fixed constant numbers that parameterize the linear relation. The constant $A$ is known as the \textbf{slope}, and $B$ is known as the (vertical) \textbf{intercept}. Different values of $A$ and $B$ give different linear relations. Which values do you use?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{More about the slope}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The value of the slope $A$ dictates how fast/slow the dependent variable $v$ changes as the independent variable $t$ changes. That is, the slope is the rate of change of the dependent variable. Since the slope is constant, it follows that the \textbf{rate of change} in a linear relation is \textbf{constant}.
+
+If $v$ is a velocity quantity and $t$ is a time quantity, then the slope must be an acceleration quantity. Thus, if $v$ is measured in m/s, and $t$ is measured in s, then $A$ has units of m/s$^{2}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{More about the intercept}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The value of the intercept $B$ dictates the value of the dependent variable $v$ when the independent variable $t$ is zero. If $t$ is a time variable, then the intercept corresponds to the \textbf{initial value} of the dependent variable.
+
+If $v$ is a velocity quantity and $t$ is a time quantity, then the intercept must be a velocity quantity. Thus, if $v$ is measured in m/s, then $B$ has units of m/s also.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Add a linear trend line to your chart}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There is a method to find the values for $A$ and $B$ that correspond to a linear relation that \textbf{best fits} the data set. We are not going to discuss this method; Google Sheets and Excel can do this for you.
+
+The simplest thing to do is to add a \textbf{linear trend line} to your velocity versus time chart. After double clicking on the chart, and getting the \texttt{Chart editor} menu, go to
+\begin{equation}
+    \texttt{CUSTOMIZE > Series}
+\end{equation}
+and check the \texttt{Trendline} box. A new menu will appear below. The \textbf{type} of the trend line should be \texttt{Linear}. You might want to choose a \textbf{color} for the trend line that is very different from the data (e.g. blue data and red trend line). Also, change the \textbf{label} to \texttt{Use Equation}. This will display the equation for the trend line in the legend. In my case, the equation has the form
+\begin{equation}
+    \texttt{10.9*x + 3.3}
+\end{equation}
+By default, Google Sheets uses \texttt{x} as the symbol for the independent variable. The numerical values for the slope and intercept of my trend line are 10.9 m/s$^{2}$ and 3.3 m/s. In my case, Figure shows the velocity data and the best-fit line.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Calculate the slope}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+You can calculate the value of the slope with the \texttt{SLOPE} function:
+\begin{equation}
+    \texttt{=SLOPE(Velocity, Time)}
+\end{equation}
+Here \texttt{Velocity} and \texttt{Time} are appropriately-defined named ranges. Note that the order inside the function is very important: first the variable in the vertical axis, then the variable in the horizontal axis. A different order would yield a different value that does not correspond to the slope.
+
+Using this method to find the slope gives you a value that is consistent with the value in the chart, but also has more significant figures.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Calculate the intercept}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+You can also calculate the value of the intercept with the \texttt{INTERCEPT} function:
+\begin{equation}
+    \texttt{=INTERCEPT(Velocity, Time)}
+\end{equation}
+Again, the order inside the function is important.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Compare to expected values}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There are expected ``theoretical'' values for this particular experiment. You can find them in Table \ref{table:00.theoretical.demo}. With these theoretical values, and the experimental values found above, you can calculate the percent difference for the slope and the intercept. In my case, Table \ref{table:00.velocity.results} summarizes my results.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    \fbox{\begin{minipage}{28em}
+        Interactive Chart: \href{https://bl.ocks.org/meirizarrygelpi/d7a581246c16a7763681e5cad1bcad48}{Velocity versus Time: Data, Fit, and Theory}
+    \end{minipage}}
+\end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{My Data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -509,6 +467,7 @@ My results are in the form of tables and figures. Here are the \textbf{tables}:
     \item Table \ref{table:00.baseline.range} with the range, center, and error for the baseline segment
     \item Table \ref{table:00.baseline.interval} with the error interval for the baseline segment
     \item Table \ref{table:00.results} with results from the other two segments
+    \item Table \ref{table:00.velocity.results} with results for the velocity measurement
 \end{itemize}
 And here are the \textbf{figures}:
 \begin{itemize}
@@ -516,8 +475,9 @@ And here are the \textbf{figures}:
     \item Figure \ref{figure:00.baseline.center} with the range and center for the baseline segment
     \item Figures \ref{figure:00.baseline.chebyshev.1}, \ref{figure:00.baseline.chebyshev.2}, and \ref{figure:00.baseline.chebyshev.3} with three Chebyshev intervals for the baseline segment
     \item Figure \ref{figure:00.baseline.interval} with the error interval for the baseline segment
+    \item Figure \ref{figure:00.velocity.fit} with the velocity data and best-fit line
 \end{itemize}
-Here are some comments of my results from Table \ref{table:00.results}:
+Here are some comments of my results in Table \ref{table:00.results} for the weight measurement:
 \begin{itemize}
     \item The baseline weight is non-zero. The three Pythagorean means, the median, and the center are all consistent with each other because they are close in magnitude.
     \item Each weight measurement is consistent also.
@@ -527,24 +487,156 @@ Here are some comments of my results from Table \ref{table:00.results}:
 \end{itemize}
 The final results for the weight values are in Table \ref{table:00.final}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\subsection{Interactive charts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For more visualization, you can explore the following interactive charts:
+\begin{enumerate}
+    \item \href{https://bl.ocks.org/meirizarrygelpi/4ff9e1ad0a6c6e7ccee79f7f41a793e6}{Weight versus Time: Data}
+    \item \href{https://bl.ocks.org/meirizarrygelpi/1ef52b7ff946234fdc74aa956ccf83c9}{Weight versus Time: Data and Mean}
+    \item \href{https://bl.ocks.org/meirizarrygelpi/faf2f927d6886b88b075ff7cdb631b30}{Weight versus Time: Data, Min, Quartiles, Max, and Mean}
+    \item \href{https://bl.ocks.org/meirizarrygelpi/fd044bb826a7a8e4f141293fa4a64de9}{Velocity versus Time: Data}
+    \item \href{https://bl.ocks.org/meirizarrygelpi/d7a581246c16a7763681e5cad1bcad48}{Velocity versus Time: Data, Fit, and Theory}
+\end{enumerate}
+Each chart is hosted at \href{https://bl.ocks.org/}{bl.ocks.org}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Your Data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Your data also consist of two files:
+\begin{itemize}
+    \item \texttt{weight.tsv}
+    \item \texttt{velocity.tsv}
+\end{itemize}
+Although these have the same names as my files, they have different values. Also, the ``theoretical'' values for each section are different. See Tables \ref{table:00.theoretical.demo}, \ref{table:00.theoretical.v01} and \ref{table:00.theoretical.v02} for specific details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Your Lab Report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There is no written lab report submission for this activity. However, you have to \textbf{submit a spreadsheet file} with your work, which \textbf{will be graded}. Submissions are done via Canvas.
+
+For \textbf{part 1}, your spreadsheet should include the following:
+\begin{enumerate}
+    \item A sheet with your raw data
+    \item A sheet with the data and results for the baseline segment
+    \item A sheet with the data and results for the first weight segment
+    \item A sheet with the data and results for the second weight segment
+\end{enumerate}
+For \textbf{each segment}, you should
+\begin{enumerate}
+    \item Include a table like Table \ref{table:00.baseline.descriptive} with the three quartiles.
+    \item Include a chart like Figure \ref{figure:00.baseline.quartiles} with the three quartiles.
+    \item Include a table like Table \ref{table:00.baseline.means} with the three Pythagorean means.
+    \item Confirm that the harmonic mean is smaller than the geometric mean, and also that the geometric mean is smaller than the usual average.
+    \item Include a table like Table \ref{table:00.baseline.interval} with the boundaries of the error interval.
+    \item Include a chart like Figure \ref{figure:00.baseline.interval} illustrating the error interval. It is okay if the boundaries of the error interval are not of the same color.
+    \item Include a table like Table \ref{table:00.results} summarizing all of your results.
+\end{enumerate}
+You can use the spreadsheet with my results as reference.
+
+For \textbf{part 2}, your spreadsheet should include the following:
+\begin{itemize}
+    \item A table like Table \ref{table:00.velocity.results} with the slope and intercept values of the best-fit line
+    \item A chart like Figure \ref{figure:00.velocity.fit} with the velocity data and the best fit line. Make sure that you include the equation.
+\end{itemize}
+The spreadsheet is due on \textbf{Monday, September 10}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Tables}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht]
+    \centering
+	\begin{tabular}{|l|r|} \hline
+        \textbf{Name} & \textbf{Value (lb)} \\
+        \hline
+		Minimum & 3.468206 \\
+		25th Percentile & 4.576510 \\
+		50th Percentile & 5.032499 \\
+		75th Percentile & 5.484631 \\
+		Maximum & 6.429887 \\
+		\hline
+	\end{tabular}
+    \caption{Min, 25th, 50th, 75th Percentiles, and Max for Baseline Segment}
+    \label{table:00.baseline.descriptive}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht]
+    \centering
+	\begin{tabular}{|l|r|} \hline
+		\textbf{Name} & \textbf{Value (lb)} \\
+        \hline
+		Arithmetic Mean & 5.042546 \\
+		Geometric Mean & 5.005110 \\
+        Harmonic Mean & 4.967486 \\
+        \hline
+        Standard Deviation & 0.612854 \\
+		\hline
+	\end{tabular}
+    \caption{Pythagorean Means and Standard Deviation for Baseline Segment}
+    \label{table:00.baseline.means}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht]
     \centering
     \begin{tabular}{|l|r|}
         \hline
-        \textbf{Name} & \textbf{Value} \\
+        \textbf{Name} & \textbf{Value (lb)} \\
         \hline
-        Weight 1 & 95 lb \\
-        Weight 2 & 166 lb \\
+        $w_{A} - 3 \sigma$ & 3.203985 \\
+        $w_{A} - 2 \sigma$ & 3.816839 \\
+        $w_{A} - \sigma$ & 4.429693 \\
         \hline
-        Slope & 11 m/s$^{2}$ \\
-        Intercept & 3 m/s \\
+        $w_{A}$ & 5.042546 \\
+        \hline
+        $w_{A} + \sigma$ & 5.655400 \\
+        $w_{A} + 2 \sigma$ & 6.268254 \\
+        $w_{A} + 3 \sigma$ & 6.881107 \\
         \hline
     \end{tabular}
-    \caption{Theoretical values for class demonstration}
-    \label{table:00.theoretical.demo}
+    \caption{Boundaries of Three Chebyshev Intervals for Baseline Segment}
+    \label{table:00.baseline.chebyshev}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table}[ht]
+    \centering
+	\begin{tabular}{|l|r|} \hline
+		\textbf{Name} & \textbf{Value (lb)} \\
+		\hline
+		Range & 2.961681 \\
+	    Center & 4.949047 \\
+		Error & 1.480841 \\
+		\hline
+	\end{tabular}
+    \caption{Range, Center, and Central Error for Baseline Segment}
+    \label{table:00.baseline.range}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht]
+    \centering
+	\begin{tabular}{|l|r|} \hline
+		\textbf{Name} & \textbf{Value (lb)} \\
+		\hline
+		$w_{A} - E$ & 3.561706 \\
+		$w_{A}$ & 5.042546 \\
+		$w_{A} + E$ & 6.523387 \\
+		\hline
+	\end{tabular}
+    \caption{Error Interval for Baseline Segment}
+    \label{table:00.baseline.interval}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|r|r|r|}
+        \hline
+        \textbf{Name} & \textbf{Experimental} & \textbf{Theoretical} & \textbf{PD} \\
+        \hline
+        Slope & 10.936546 m/s$^{2}$ & 11 m/s$^{2}$ & -0.58\% \\
+        Intercept & 3.303589 m/s & 3 m/s & 10.12\% \\
+        \hline
+    \end{tabular}
+    \caption{Final and Percent Differences}
+    \label{table:00.velocity.results}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht]
     \centering
     \begin{tabular}{|l|r|r|r|r|r|r|r|}
         \hline
@@ -568,7 +660,7 @@ The final results for the weight values are in Table \ref{table:00.final}.
     \label{table:00.results}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table}[ht]
     \centering
     \begin{tabular}{|l|r|}
         \hline
@@ -582,14 +674,22 @@ The final results for the weight values are in Table \ref{table:00.final}.
     \label{table:00.final}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Your Data}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Your data also consist of two files:
-\begin{itemize}
-    \item \texttt{weight.tsv}
-    \item \texttt{velocity.tsv}
-\end{itemize}
-Although these have the same names as my files, they have different values. Also, the ``theoretical'' values for each section are different. See Table \ref{table:00.theoretical.v01} and Table \ref{table:00.theoretical.v02} for specific details.
+\begin{table}
+    \centering
+    \begin{tabular}{|l|r|}
+        \hline
+        \textbf{Name} & \textbf{Value} \\
+        \hline
+        Weight 1 & 95 lb \\
+        Weight 2 & 166 lb \\
+        \hline
+        Slope & 11 m/s$^{2}$ \\
+        Intercept & 3 m/s \\
+        \hline
+    \end{tabular}
+    \caption{Theoretical values for class demonstration}
+    \label{table:00.theoretical.demo}
+\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}
     \centering
@@ -625,31 +725,63 @@ Although these have the same names as my files, they have different values. Also
     \label{table:00.theoretical.v02}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Your Lab Report}
+\FloatBarrier
+\newpage
+\section{Figures}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-There is no written lab report submission for this activity. However, you have to \textbf{submit a spreadsheet file} with your work, which \textbf{will be graded}. Submissions are done via Canvas.
-
-For \textbf{part 1}, your spreadsheet should include the following:
-\begin{enumerate}
-    \item A sheet with your raw data
-    \item A sheet with the data and results for the baseline segment
-    \item A sheet with the data and results for the first weight segment
-    \item A sheet with the data and results for the second weight segment
-\end{enumerate}
-For \textbf{each segment}, you should
-\begin{enumerate}
-    \item Include a table like Table \ref{table:00.baseline.descriptive} with the three quartiles.
-    \item Include a chart like Figure \ref{figure:00.baseline.quartiles} with the three quartiles.
-    \item Include a table like Table \ref{table:00.baseline.means} with the three Pythagorean means.
-    \item Confirm that the harmonic mean is smaller than the geometric mean, and also that the geometric mean is smaller than the usual average.
-    \item Include a table like Table \ref{table:00.baseline.interval} with the boundaries of the error interval.
-    \item Include a chart like Figure \ref{figure:00.baseline.interval} illustrating the error interval. It is okay if the boundaries of the error interval are not of the same color.
-    \item Include a table like Table \ref{table:00.results} summarizing all of your results.
-\end{enumerate}
-You can use the spreadsheet with my results as reference.
-
-For \textbf{part 2}, your spreadsheet should include the following:
-\begin{itemize}
-    \item ...
-\end{itemize}
-The spreadsheet is due on \textbf{Monday, September 10}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics{chart/00-intro/baseline-quartiles.pdf}
+    \caption{Quartiles for Baseline Segment}
+    \label{figure:00.baseline.quartiles}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \includegraphics{chart/00-intro/baseline-chebyshev.pdf}
+    \caption{Three Chebyshev Intervals for Baseline Segment}
+    \label{figure:00.baseline.chebyshev}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \includegraphics{chart/00-intro/baseline-chebyshev-1.pdf}
+    \caption{First Chebyshev Interval for Baseline Segment}
+    \label{figure:00.baseline.chebyshev.1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \includegraphics{chart/00-intro/baseline-chebyshev-2.pdf}
+    \caption{Second Chebyshev Interval for Baseline Segment}
+    \label{figure:00.baseline.chebyshev.2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \includegraphics{chart/00-intro/baseline-chebyshev-3.pdf}
+    \caption{Third Chebyshev Interval for Baseline Segment}
+    \label{figure:00.baseline.chebyshev.3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \includegraphics{chart/00-intro/baseline-min-center-max.pdf}
+    \caption{Range and Center for Baseline Segment}
+    \label{figure:00.baseline.center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \includegraphics{chart/00-intro/baseline-error-interval.pdf}
+    \caption{Error Interval for Baseline Segment}
+    \label{figure:00.baseline.interval}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+    \centering
+    \includegraphics{chart/00-intro/velocity-fit.pdf}
+    \caption{Velocity Data and Best Fit}
+    \label{figure:00.velocity.fit}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
